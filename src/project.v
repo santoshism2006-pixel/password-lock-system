@@ -13,9 +13,8 @@ module tt_um_password_lock (
 
     assign unlock = (ui_in[3:0] == 4'b0110);
 
-    assign uo_out[0] = unlock;     // Green LED
-    assign uo_out[1] = ~unlock;    // Red LED
-
+    assign uo_out[0] = unlock;
+    assign uo_out[1] = ~unlock;
     assign uo_out[7:2] = 6'b000000;
 
     assign uio_out = 8'b00000000;
