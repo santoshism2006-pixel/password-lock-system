@@ -1,23 +1,19 @@
-```yaml id="drvx4h"
-# Tiny Tapeout project information
 project:
-  title:        "Password Lock System"
-  author:       "Santoshi SM"
-  discord:      ""
-  description:  "A simple 4-bit password lock system using Verilog HDL"
-  language:     "Verilog"
-  clock_hz:     1000000
+  title: "Password Lock System"
+  author: "Santoshi SM"
+  discord: ""
+  description: "A simple 4-bit password lock system using Verilog HDL"
+  language: "Verilog"
+  clock_hz: 1000000
 
-  # Tiny Tapeout template version
   tiles: "1x1"
 
-  top_module:  "tt_um_password_lock"
+  top_module: "tt_um_password_lock"
 
   source_files:
     - "project.v"
 
 pinout:
-  # Inputs
   ui[0]: "Password bit 0"
   ui[1]: "Password bit 1"
   ui[2]: "Password bit 2"
@@ -27,9 +23,8 @@ pinout:
   ui[6]: "Unused"
   ui[7]: "Unused"
 
-  # Outputs
-  uo[0]: "Unlock output"
-  uo[1]: "Error output"
+  uo[0]: "Unlock LED"
+  uo[1]: "Error LED"
   uo[2]: "Unused"
   uo[3]: "Unused"
   uo[4]: "Unused"
@@ -37,7 +32,6 @@ pinout:
   uo[6]: "Unused"
   uo[7]: "Unused"
 
-  # Bidirectional IOs
   uio[0]: "Unused"
   uio[1]: "Unused"
   uio[2]: "Unused"
@@ -46,6 +40,3 @@ pinout:
   uio[5]: "Unused"
   uio[6]: "Unused"
   uio[7]: "Unused"
-
-yaml_version: 6
-```
