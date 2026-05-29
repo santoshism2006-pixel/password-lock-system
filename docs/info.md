@@ -1,20 +1,67 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
+# Password Lock System
 
 ## How it works
 
-Explain how your project works
+This project implements a simple digital Password Lock System using Verilog HDL for Tiny Tapeout.
+
+The circuit compares a 4-bit password input from `ui_in[3:0]` with a predefined secret password.
+
+Secret Password:
+0110
+
+### Operation
+
+* If the entered password is correct:
+
+  * `uo_out[0]` becomes HIGH indicating the lock is opened.
+  * `uo_out[1]` becomes LOW indicating no error.
+
+* If the entered password is incorrect:
+
+  * `uo_out[0]` remains LOW.
+  * `uo_out[1]` becomes HIGH indicating an invalid password.
+
+The design uses combinational logic to continuously compare the input password with the stored password.
+
+---
 
 ## How to test
 
-Explain how to use your project
+1. Apply a 4-bit input password using `ui_in[3:0]`.
+
+2. Enter the correct password:
+   0110
+
+Expected output:
+
+* `uo_out[0] = 1`
+* `uo_out[1] = 0`
+
+3. Enter any incorrect password such as:
+   0001
+
+Expected output:
+
+* `uo_out[0] = 0`
+* `uo_out[1] = 1`
+
+### Example Test Cases
+
+| Password Input | Unlock Output | Error Output |
+| -------------- | ------------- | ------------ |
+| 0110           | 1             | 0            |
+| 0000           | 0             | 1            |
+| 1010           | 0             | 1            |
+| 1111           | 0             | 1            |
+
+---
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+No external hardware is required for this project.
+
+Optional external hardware:
+
+* LEDs for output indication
+* DIP switches for password input
+* Push buttons for manual testing
