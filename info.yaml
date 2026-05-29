@@ -14,7 +14,7 @@ project:
   top_module:  "tt_um_password_lock"
 
   source_files:
-    - "tt_um_password_lock.v"
+    - "project.v"
 
 pinout:
   # Inputs
